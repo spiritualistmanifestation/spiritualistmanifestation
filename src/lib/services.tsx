@@ -1,4 +1,4 @@
-import { Heart, Star, UserPlus, HandCoins, BookHeart, Users, Briefcase, Baby, ShieldBan, Scale, Shield } from 'lucide-react';
+import { Heart, Star, UserPlus, HandCoins, BookHeart, Users, Briefcase, Baby, ShieldBan, Scale, Shield, Sparkles } from 'lucide-react';
 import type { ReactElement } from 'react';
 
 export interface Spell {
