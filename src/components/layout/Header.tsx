@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { ThemeToggleButton } from './ThemeToggleButton';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -64,29 +65,32 @@ export function Header() {
             SpiritualManifestation
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
-          ))}
-        </nav>
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col items-center justify-center h-full">
-                <nav className="flex flex-col items-center gap-6">
-                  {navLinks.map((link) => (
-                    <NavLink key={link.href} {...link} isMobile />
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className="flex items-center gap-2">
+          <nav className="hidden items-center gap-6 md:flex">
+            {navLinks.map((link) => (
+              <NavLink key={link.href} {...link} />
+            ))}
+          </nav>
+          <ThemeToggleButton />
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <div className="flex flex-col items-center justify-center h-full">
+                  <nav className="flex flex-col items-center gap-6">
+                    {navLinks.map((link) => (
+                      <NavLink key={link.href} {...link} isMobile />
+                    ))}
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
