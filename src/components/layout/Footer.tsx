@@ -70,9 +70,6 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} SpiritualManifestation. All rights reserved.
           </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Disclaimer: Spell casting is an art based on spiritual beliefs. Results may vary and are not guaranteed. Services are for entertainment purposes for those 18+.
-          </p>
         </div>
       </div>
     </footer>
