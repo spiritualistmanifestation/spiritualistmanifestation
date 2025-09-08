@@ -5,6 +5,7 @@ import { SSLBadge } from '../icons/SSLBadge';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/book', label: 'Booking' },
   { href: '/privacy-policy', label: 'Privacy Policy' },

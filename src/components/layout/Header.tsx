@@ -15,6 +15,7 @@ import { ThemeToggleButton } from './ThemeToggleButton';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
