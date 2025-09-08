@@ -42,7 +42,6 @@ const bookingSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   spellType: z.string({ required_error: "Please select a spell." }),
   targetName: z.string().optional(),
-  photo: z.any().optional(),
   message: z.string().min(10, "Please describe your situation (min. 10 characters).").max(1000),
   terms: z.literal(true, {
     errorMap: () => ({ message: "You must accept the terms and conditions." }),
@@ -151,34 +150,19 @@ export function BookingForm() {
                   )}
                 />
               </div>
-              <div className="grid md:grid-cols-2 gap-8">
-                 <FormField
-                  control={form.control}
-                  name="targetName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Target Person&apos;s First Name (Optional)</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g., John" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                 <FormField
-                  control={form.control}
-                  name="photo"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Upload Photo (Optional)</FormLabel>
-                      <FormControl>
-                        <Input type="file" {...form.register('photo')} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+              <FormField
+                control={form.control}
+                name="targetName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Target Person&apos;s First Name (Optional)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g., John" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="message"
