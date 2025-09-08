@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function RefundPolicyPage()_ {
+export default function RefundPolicyPage() {
     const [lastUpdated, setLastUpdated] = useState('');
 
     useEffect(() => {
