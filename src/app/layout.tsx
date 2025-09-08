@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Enchanting Heart Spells - Restore Love & Manifest Your Desires',
+  title: 'Spiritual Manifestation - Restore Love & Manifest Your Desires',
   description:
     'Powerful, ethical spell casting for love, relationships, and personal growth. Reunite with a lover, attract a soulmate, or strengthen your bond. 100% confidential.',
 };

@@ -5,7 +5,7 @@ export default function PrivacyPolicyPage() {
                 <div className="prose lg:prose-xl max-w-none mx-auto text-foreground">
                     <h1 className="font-headline text-primary">Privacy Policy</h1>
                     <p className="lead font-body">
-                        Your privacy is sacred to us at EnchantingHeartSpells. This policy outlines how we handle your personal information with the utmost care and confidentiality.
+                        Your privacy is sacred to us at Spiritual Manifestation. This policy outlines how we handle your personal information with the utmost care and confidentiality.
                     </p>
 
                     <h2 className="font-headline text-primary">Information We Collect</h2>
@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
 
                     <h2 className="font-headline text-primary">Your Rights</h2>
                     <p>
-                        You have the right to request access to the personal information we hold about you. You may also request that we correct or delete your personal information at any time. To make such a request, please contact us at hello@enchantingheartspells.com.
+                        You have the right to request access to the personal information we hold about you. You may also request that we correct or delete your personal information at any time. To make such a request, please contact us at hello@spiritualmanifestation.com.
                     </p>
 
                      <h2 className="font-headline text-primary">Changes to This Policy</h2>

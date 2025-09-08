@@ -40,7 +40,7 @@ export default function RefundPolicyPage() {
                         Spiritual work and spell casting are based on faith, energy, and the intricate paths of fate. While we perform every ritual with the highest intent and skill, the universe's will and the free will of individuals play a role. Therefore, <strong>results are not guaranteed.</strong>
                     </p>
                     <p>
-                        By booking a service with EnchantingHeartSpells, you acknowledge and agree that you have read, understood, and accepted the terms of this refund policy.
+                        By booking a service with Spiritual Manifestation, you acknowledge and agree that you have read, understood, and accepted the terms of this refund policy.
                     </p>
 
                     <p className="mt-8 text-sm text-muted-foreground">

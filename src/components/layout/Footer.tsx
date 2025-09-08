@@ -20,7 +20,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Sprout className="h-8 w-8 text-primary" />
               <span className="font-headline text-2xl font-bold text-primary">
-                Enchanting<br/>HeartSpells
+                Spiritual<br/>Manifestation
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -44,8 +44,8 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                <a href="mailto:hello@enchantingheartspells.com" className="text-sm text-muted-foreground hover:text-primary transition-colors break-all">
-                  hello@enchantingheartspells.com
+                <a href="mailto:hello@spiritualmanifestation.com" className="text-sm text-muted-foreground hover:text-primary transition-colors break-all">
+                  hello@spiritualmanifestation.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -67,7 +67,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} EnchantingHeartSpells. All rights reserved.
+            &copy; {new Date().getFullYear()} SpiritualManifestation. All rights reserved.
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
             Disclaimer: Spell casting is an art based on spiritual beliefs. Results may vary and are not guaranteed. Services are for entertainment purposes for those 18+.
