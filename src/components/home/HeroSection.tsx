@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="relative h-[70vh] min-h-[450px] w-full flex items-center justify-center text-center text-white">
       <Image
-        src="https://picsum.photos/1920/1080"
+        src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/413683195/original/4c3ffeb3e7fba4c10c1c4f74b894ca6cd3e0edb4/cast-effective-love-spell-to-restore-your-ex-love-feelings.png"
         alt="Mystical background with candles and stars"
         data-ai-hint="mystical spiritual background"
         fill
