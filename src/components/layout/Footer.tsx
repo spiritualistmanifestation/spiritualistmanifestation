@@ -15,8 +15,8 @@ export function Footer() {
   return (
     <footer className="bg-card text-card-foreground border-t">
       <div className="container max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="md:col-span-1 sm:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Sprout className="h-8 w-8 text-primary" />
               <span className="font-headline text-2xl font-bold text-primary">
@@ -42,14 +42,14 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-headline font-semibold text-foreground">Contact Us</h3>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:hello@enchantingheartspells.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <li className="flex items-start gap-3">
+                <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                <a href="mailto:hello@enchantingheartspells.com" className="text-sm text-muted-foreground hover:text-primary transition-colors break-all">
                   hello@enchantingheartspells.com
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary" />
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">24/7 Remote Spell Work</span>
               </li>
             </ul>
@@ -60,7 +60,7 @@ export function Footer() {
                 <DMCABadge className="h-12" />
                 <SSLBadge className="h-12" />
              </div>
-             <p className="text-xs text-muted-foreground">
+             <p className="text-xs text-muted-foreground mt-2">
                 Your privacy and security are our top priorities. All communications are confidential.
              </p>
            </div>

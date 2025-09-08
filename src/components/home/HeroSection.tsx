@@ -1,10 +1,12 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export function HeroSection() {
   return (
-    <section className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center text-center text-white">
+    <section className="relative h-[70vh] min-h-[450px] w-full flex items-center justify-center text-center text-white">
       <Image
         src="https://picsum.photos/1920/1080"
         alt="Mystical background with candles and stars"
@@ -13,12 +15,12 @@ export function HeroSection() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex flex-col items-center gap-6 p-4">
-        <h1 className="text-4xl font-headline md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+        <h1 className="text-4xl font-headline sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
           Restore Your Love Today 🌹
         </h1>
-        <p className="max-w-2xl text-lg md:text-xl text-white/90 font-body">
+        <p className="max-w-2xl text-md sm:text-lg md:text-xl text-white/90 font-body">
           Harness ancient energies to reunite with your soulmate, strengthen your connection, and manifest the love you deserve.
         </p>
         <Link href="/book">

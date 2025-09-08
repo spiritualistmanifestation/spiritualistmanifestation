@@ -70,7 +70,7 @@ export default function ClientStoryGenerator() {
   }
 
   return (
-    <div className="grid md:grid-cols-2 gap-12 items-start">
+    <div className="grid lg:grid-cols-2 gap-12 items-start">
       <Card className="shadow-2xl">
         <CardHeader>
             <CardTitle className="font-headline text-2xl text-primary">Generate a Sample Story</CardTitle>
@@ -150,7 +150,7 @@ export default function ClientStoryGenerator() {
         </CardContent>
       </Card>
       
-      <div className="h-full">
+      <div className="h-full min-h-[300px] lg:min-h-full">
       {isGenerating && (
         <Card className="h-full flex flex-col justify-center items-center bg-card-muted">
             <Loader2 className="h-8 w-8 animate-spin text-primary"/>
@@ -168,7 +168,7 @@ export default function ClientStoryGenerator() {
         />
       )}
        {!isGenerating && !generatedStory && (
-        <Card className="h-full flex flex-col justify-center items-center border-dashed border-2">
+        <Card className="h-full flex flex-col justify-center items-center border-dashed border-2 min-h-[300px]">
             <div className="text-center p-8">
                 <p className="text-muted-foreground">Your generated story will appear here.</p>
                 <p className="text-sm text-muted-foreground/80 mt-2">Fill out the form and click "Generate Story" to see the magic!</p>
