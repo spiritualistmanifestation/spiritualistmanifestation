@@ -1,11 +1,21 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { services, type Spell } from '@/lib/services';
+import Image from 'next/image';
 import Link from 'next/link';
 
 function SpellCard({ spell }: { spell: Spell }) {
     return (
-        <Card className="flex flex-col h-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300 bg-card">
+        <Card className="flex flex-col h-full shadow-lg hover:shadow-primary/20 transition-shadow duration-300 bg-card overflow-hidden">
+            <div className="relative h-48 w-full">
+                <Image
+                    src={spell.imageUrl}
+                    alt={spell.name}
+                    data-ai-hint={spell.dataAiHint}
+                    fill
+                    className="object-cover"
+                />
+            </div>
             <CardHeader>
                 <div className="flex items-start sm:items-center gap-4">
                     <div className="bg-primary/10 p-4 rounded-full mt-1 sm:mt-0">
@@ -34,7 +44,7 @@ function SpellCard({ spell }: { spell: Spell }) {
                     </li>
                 </ul>
             </CardContent>
-            <CardFooter className="flex flex-col sm:flex-row justify-between items-center border-t pt-6 mt-4 gap-4 sm:gap-0">
+            <CardFooter className="flex flex-col sm:flex-row justify-between items-center border-t pt-6 mt-auto gap-4 sm:gap-0">
                 <p className="text-2xl font-bold font-headline text-foreground">{spell.price}</p>
                 <Link href={`/book?spell=${encodeURIComponent(spell.name)}`}>
                     <Button variant="default">Book Spell</Button>

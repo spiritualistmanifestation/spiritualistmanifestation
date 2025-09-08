@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Sparkles, Users } from 'lucide-react';
 import { services } from '@/lib/services';
+import Image from 'next/image';
 
 const featuredServices = services.slice(0, 3);
 
@@ -18,7 +18,16 @@ export function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredServices.map((service, index) => (
-            <Card key={index} className="flex flex-col shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+            <Card key={index} className="flex flex-col shadow-lg hover:shadow-primary/20 transition-shadow duration-300 overflow-hidden">
+                <div className="relative h-48 w-full">
+                    <Image
+                        src={service.imageUrl}
+                        alt={service.name}
+                        data-ai-hint={service.dataAiHint}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
               <CardHeader>
                 <div className="flex items-center gap-4">
                     <div className="bg-primary/10 p-3 rounded-full">
@@ -31,7 +40,7 @@ export function ServicesSection() {
                 <CardDescription className="flex-grow">{service.description}</CardDescription>
                 <div className="mt-4 pt-4 border-t flex justify-between items-center">
                     <p className="text-2xl font-bold font-headline text-foreground">{service.price}</p>
-                    <Link href="/book">
+                    <Link href={`/book?spell=${encodeURIComponent(service.name)}`}>
                         <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                             Book Now
                         </Button>
