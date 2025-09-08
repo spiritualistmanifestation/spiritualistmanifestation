@@ -9,16 +9,25 @@ import { TestimonialCard } from "../TestimonialCard"
 import Link from "next/link"
 import { Button } from "../ui/button"
 import { testimonials as allTestimonials } from "@/lib/testimonials"
+import Image from "next/image"
 
 const featuredTestimonials = allTestimonials.slice(0, 5);
 
 export function TestimonialsSection() {
     return (
-        <section className="py-16 sm:py-24 bg-secondary">
-            <div className="container max-w-7xl">
+        <section className="py-16 sm:py-24 bg-secondary relative">
+            <Image
+                src="https://m.economictimes.com/thumb/msid-116685050,width-1200,height-1200,resizemode-4,imgsize-42538/bloodworm-love-spell-ritual-sparks-debate-in-singapore.jpg"
+                alt="Rekindled Love"
+                fill
+                className="object-cover z-0"
+                data-ai-hint="love background"
+            />
+            <div className="absolute inset-0 bg-black/70 z-10" />
+            <div className="container max-w-7xl relative z-20">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Stories of Rekindled Love</h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white font-headline">Stories of Rekindled Love</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                         Hear from our clients who have found their way back to love and happiness through our spiritual guidance.
                     </p>
                 </div>
@@ -43,7 +52,7 @@ export function TestimonialsSection() {
                 </Carousel>
                 <div className="mt-12 text-center">
                     <Link href="/testimonials">
-                        <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
                             Read More Stories
                         </Button>
                     </Link>
