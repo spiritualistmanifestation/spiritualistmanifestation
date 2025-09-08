@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Star } from "lucide-react"
+import { Star, MapPin } from "lucide-react"
 
 interface TestimonialCardProps {
   name: string
+  location: string
   rating: number
   profileIcon: string
   dataAiHint?: string
@@ -11,7 +12,7 @@ interface TestimonialCardProps {
   story: string
 }
 
-export function TestimonialCard({ name, rating, profileIcon, dataAiHint, timestamp, story }: TestimonialCardProps) {
+export function TestimonialCard({ name, location, rating, profileIcon, dataAiHint, timestamp, story }: TestimonialCardProps) {
   return (
     <Card className="h-full flex flex-col p-6 bg-card shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg">
       <CardContent className="p-0 flex flex-col flex-grow">
@@ -22,7 +23,10 @@ export function TestimonialCard({ name, rating, profileIcon, dataAiHint, timesta
           </Avatar>
           <div>
             <p className="font-semibold font-headline text-foreground">{name}</p>
-            <p className="text-xs text-muted-foreground">{timestamp}</p>
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              <MapPin className="h-3 w-3" />
+              <span>{location}</span>
+            </div>
           </div>
         </div>
         <div className="flex items-center gap-1 mb-4">
@@ -34,6 +38,7 @@ export function TestimonialCard({ name, rating, profileIcon, dataAiHint, timesta
           ))}
         </div>
         <p className="text-sm text-muted-foreground flex-grow">&quot;{story}&quot;</p>
+        <p className="text-xs text-muted-foreground/80 text-right mt-4">{timestamp}</p>
       </CardContent>
     </Card>
   )
