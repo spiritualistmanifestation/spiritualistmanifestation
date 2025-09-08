@@ -211,7 +211,7 @@ export function BookingForm() {
       <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Booking Received!</AlertDialogTitle>
+            <AlertDialogTitle>Booking Sent!</AlertDialogTitle>
             <AlertDialogDescription>
               Thank you for your trust. You will be contacted within 12 hours via WhatsApp to finalize the details of your spell.
             </AlertDialogDescription>
