@@ -35,7 +35,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Loader2 } from "lucide-react";
-import { sendBookingNotification } from './actions';
+import { sendBookingNotification, type BookingFormValues } from './actions';
 
 
 const bookingSchema = z.object({
@@ -49,8 +49,6 @@ const bookingSchema = z.object({
     errorMap: () => ({ message: "You must accept the terms and conditions." }),
   }),
 });
-
-type BookingFormValues = z.infer<typeof bookingSchema>;
 
 export function BookingForm() {
   const searchParams = useSearchParams();
