@@ -18,8 +18,9 @@ export type BookingFormState = {
 };
 
 // A simpler, more targeted escape function for Telegram's MarkdownV2
-const escapeMarkdown = (text: string) => {
+const escapeMarkdown = (text: string | undefined) => {
     if (!text) return '';
+    // Main characters to escape for MarkdownV2
     const charsToEscape = /[_*[\]()~`>#+\-=|{}.!]/g;
     return text.replace(charsToEscape, '\\$&');
 };
@@ -43,10 +44,10 @@ export async function sendBookingNotification(
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!botToken || !chatId) {
-        console.error("Telegram environment variables are not set.");
+        console.error("Telegram environment variables (TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID) are not set.");
         return {
             success: false,
-            message: "Server configuration error. Could not send booking."
+            message: "Server configuration error: Could not find Telegram credentials."
         };
     }
 
@@ -88,14 +89,16 @@ ${escapeMarkdown(message)}
         const result = await response.json();
         
         if (!result.ok) {
+            // Log the specific error from Telegram for debugging
             console.error("Telegram API Error:", result.description);
-            return { success: false, message: 'Failed to send notification to Telegram.' };
+            // Return a more informative error message
+            return { success: false, message: `Failed to send notification to Telegram: ${result.description}` };
         }
         
         return { success: true, message: 'Booking sent successfully!' };
 
     } catch (error) {
         console.error('Error sending Telegram notification:', error);
-        return { success: false, message: 'An unexpected error occurred.' };
+        return { success: false, message: 'An unexpected network error occurred while contacting Telegram.' };
     }
 }
