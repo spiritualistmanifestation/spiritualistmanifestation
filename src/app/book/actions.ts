@@ -61,13 +61,13 @@ export async function sendBookingNotification(
 A new spell has been booked\\.
 
 *Client Details:*
-- *Full Name:* ${escapeMarkdown(fullName)}
-- *WhatsApp:* ${escapeMarkdown(whatsappNumber)}
-- *Email:* ${escapeMarkdown(email)}
+\\- *Full Name:* ${escapeMarkdown(fullName)}
+\\- *WhatsApp:* ${escapeMarkdown(whatsappNumber)}
+\\- *Email:* ${escapeMarkdown(email)}
 
 *Spell Details:*
-- *Spell Type:* ${escapeMarkdown(spellType)}
-- *Target Name:* ${targetName ? escapeMarkdown(targetName) : 'N/A'}
+\\- *Spell Type:* ${escapeMarkdown(spellType)}
+\\- *Target Name:* ${targetName ? escapeMarkdown(targetName) : 'N/A'}
 
 *Client's Situation:*
 \`\`\`
