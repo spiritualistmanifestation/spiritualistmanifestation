@@ -1,14 +1,14 @@
 'use server';
-
+require('dotenv').config();
 import * as z from 'zod';
 
 const bookingSchema = z.object({
-  fullName: z.string().min(2, "Full name must be at least 2 characters."),
-  whatsappNumber: z.string().min(10, "Please enter a valid WhatsApp number."),
-  email: z.string().email("Please enter a valid email address."),
-  spellType: z.string({ required_error: "Please select a spell." }),
+  fullName: z.string().min(2),
+  whatsappNumber: z.string().min(10),
+  email: z.string().email(),
+  spellType: z.string(),
   targetName: z.string().optional(),
-  message: z.string().min(10, "Please describe your situation (min. 10 characters).").max(1000),
+  message: z.string().min(10),
 });
 
 export type BookingFormValues = z.infer<typeof bookingSchema>;
@@ -17,12 +17,13 @@ export type BookingFormState = {
     message: string;
 };
 
+// A simpler, more targeted escape function for Telegram's MarkdownV2
 const escapeMarkdown = (text: string) => {
     if (!text) return '';
-    // Characters to escape for Telegram's MarkdownV2 style
-    const charsToEscape = /([_*\[\]()~`>#+\-=|{}.!])/g;
-    return text.replace(charsToEscape, '\\$1');
+    const charsToEscape = /[_*[\]()~`>#+\-=|{}.!]/g;
+    return text.replace(charsToEscape, '\\$&');
 };
+
 
 export async function sendBookingNotification(
     values: BookingFormValues
@@ -85,7 +86,7 @@ ${escapeMarkdown(message)}
         });
 
         const result = await response.json();
-
+        
         if (!result.ok) {
             console.error("Telegram API Error:", result.description);
             return { success: false, message: 'Failed to send notification to Telegram.' };

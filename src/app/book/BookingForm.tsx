@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/services";
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -55,7 +55,7 @@ type BookingFormValues = z.infer<typeof bookingSchema>;
 export function BookingForm() {
   const searchParams = useSearchParams();
   const spellFromQuery = searchParams.get('spell');
-  const [isPending, startTransition] = useTransition();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -73,9 +73,10 @@ export function BookingForm() {
     },
   });
 
-  const onSubmit = (values: BookingFormValues) => {
+  const onSubmit = async (values: BookingFormValues) => {
     setError(null);
-    startTransition(async () => {
+    setIsSubmitting(true);
+    try {
         const result = await sendBookingNotification(values);
         if (result.success) {
             setShowSuccessDialog(true);
@@ -83,7 +84,11 @@ export function BookingForm() {
         } else {
             setError(result.message);
         }
-    });
+    } catch (e) {
+        setError("An unexpected error occurred. Please try again.");
+    } finally {
+        setIsSubmitting(false);
+    }
   }
   
   return (
@@ -218,9 +223,9 @@ export function BookingForm() {
                     )}
                   />
                   {error && <p className="text-sm font-medium text-destructive">{error}</p>}
-                  <Button type="submit" size="lg" className="w-full" disabled={isPending}>
-                    {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                    {isPending ? "Booking..." : "Book Spell"}
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                    {isSubmitting ? "Booking..." : "Book Spell"}
                   </Button>
                 </form>
               </Form>
