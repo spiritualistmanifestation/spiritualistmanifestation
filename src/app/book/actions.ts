@@ -19,7 +19,6 @@ export type BookingFormState = {
 
 const escapeMarkdown = (text: string | undefined) => {
     if (!text) return '';
-    // Escape all characters that Telegram's MarkdownV2 requires
     const charsToEscape = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];
     let escapedText = text;
     for (const char of charsToEscape) {
