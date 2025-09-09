@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/services";
-import { useState, useTransition, useEffect } from "react";
+import { useState, useTransition } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -50,6 +50,8 @@ const bookingSchema = z.object({
   }),
 });
 
+type BookingFormValues = z.infer<typeof bookingSchema>;
+
 export function BookingForm() {
   const searchParams = useSearchParams();
   const spellFromQuery = searchParams.get('spell');
@@ -58,7 +60,7 @@ export function BookingForm() {
   const [error, setError] = useState<string | null>(null);
 
 
-  const form = useForm<z.infer<typeof bookingSchema>>({
+  const form = useForm<BookingFormValues>({
     resolver: zodResolver(bookingSchema),
     defaultValues: {
       fullName: "",
@@ -71,17 +73,10 @@ export function BookingForm() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof bookingSchema>) => {
+  const onSubmit = (values: BookingFormValues) => {
     setError(null);
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-        if(value) {
-            formData.append(key, value.toString());
-        }
-    });
-
     startTransition(async () => {
-        const result = await sendBookingNotification({ success: false, message: '' }, formData);
+        const result = await sendBookingNotification(values);
         if (result.success) {
             setShowSuccessDialog(true);
             form.reset();

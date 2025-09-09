@@ -11,31 +11,23 @@ const bookingSchema = z.object({
   message: z.string().min(10, "Please describe your situation (min. 10 characters).").max(1000),
 });
 
+export type BookingFormValues = z.infer<typeof bookingSchema>;
 export type BookingFormState = {
     success: boolean;
     message: string;
 };
 
-// Function to escape characters for Telegram's MarkdownV2 style
 const escapeMarkdown = (text: string) => {
     if (!text) return '';
-    // Escape characters for Telegram's MarkdownV2: _ * [ ] ( ) ~ ` > # + - = | { } . !
-    return text.replace(/([_*\[\]()~`>#+\-=|{}.!])/g, '\\$1');
+    // Characters to escape for Telegram's MarkdownV2 style
+    const charsToEscape = /([_*\[\]()~`>#+\-=|{}.!])/g;
+    return text.replace(charsToEscape, '\\$1');
 };
 
-
 export async function sendBookingNotification(
-    prevState: BookingFormState,
-    formData: FormData
+    values: BookingFormValues
 ): Promise<BookingFormState> {
-    const validatedFields = bookingSchema.safeParse({
-        fullName: formData.get('fullName'),
-        whatsappNumber: formData.get('whatsappNumber'),
-        email: formData.get('email'),
-        spellType: formData.get('spellType'),
-        targetName: formData.get('targetName'),
-        message: formData.get('message'),
-    });
+    const validatedFields = bookingSchema.safeParse(values);
 
     if (!validatedFields.success) {
         return {
