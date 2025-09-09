@@ -17,10 +17,8 @@ export type BookingFormState = {
     message: string;
 };
 
-// A robust escape function for Telegram's MarkdownV2
 const escapeMarkdown = (text: string | undefined) => {
     if (!text) return '';
-    // Telegram's official list of characters to escape in MarkdownV2
     const charsToEscape = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];
     let escapedText = text;
     for (const char of charsToEscape) {
@@ -93,9 +91,7 @@ ${escapeMarkdown(message)}
         const result = await response.json();
         
         if (!result.ok) {
-            // Log the specific error from Telegram for debugging
             console.error("Telegram API Error:", result.description);
-            // Return a more informative error message
             return { success: false, message: `Failed to send notification to Telegram: ${result.description}` };
         }
         
