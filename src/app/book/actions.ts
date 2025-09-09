@@ -16,6 +16,13 @@ export type BookingFormState = {
     message: string;
 };
 
+// Function to escape characters for Telegram's MarkdownV2 style
+const escapeMarkdown = (text: string) => {
+    // Escape characters: _ * [ ] ( ) ~ ` > # + - = | { } . !
+    return text.replace(/([_*\[\]()~`>#+\-=|{}.!])/g, '\\$1');
+};
+
+
 export async function sendBookingNotification(
     prevState: BookingFormState,
     formData: FormData
@@ -52,20 +59,20 @@ export async function sendBookingNotification(
     const notificationMessage = `
 🔔 *New Notification from SpiritualManifestation* 🔔
 
-A new spell has been booked.
+A new spell has been booked\\.
 
 *Client Details:*
-- *Full Name:* ${fullName}
-- *WhatsApp:* ${whatsappNumber}
-- *Email:* ${email}
+- *Full Name:* ${escapeMarkdown(fullName)}
+- *WhatsApp:* ${escapeMarkdown(whatsappNumber)}
+- *Email:* ${escapeMarkdown(email)}
 
 *Spell Details:*
-- *Spell Type:* ${spellType}
-- *Target Name:* ${targetName || 'N/A'}
+- *Spell Type:* ${escapeMarkdown(spellType)}
+- *Target Name:* ${targetName ? escapeMarkdown(targetName) : 'N/A'}
 
 *Client's Situation:*
 \`\`\`
-${message}
+${escapeMarkdown(message)}
 \`\`\`
     `;
 
@@ -80,7 +87,7 @@ ${message}
             body: JSON.stringify({
                 chat_id: chatId,
                 text: notificationMessage,
-                parse_mode: 'Markdown',
+                parse_mode: 'MarkdownV2',
             }),
         });
 
