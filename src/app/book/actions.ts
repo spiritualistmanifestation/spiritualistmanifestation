@@ -17,12 +17,16 @@ export type BookingFormState = {
     message: string;
 };
 
-// A simpler, more targeted escape function for Telegram's MarkdownV2
+// A robust escape function for Telegram's MarkdownV2
 const escapeMarkdown = (text: string | undefined) => {
     if (!text) return '';
-    // Main characters to escape for MarkdownV2
-    const charsToEscape = /[_*[\]()~`>#+\-=|{}.!]/g;
-    return text.replace(charsToEscape, '\\$&');
+    // Telegram's official list of characters to escape in MarkdownV2
+    const charsToEscape = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];
+    let escapedText = text;
+    for (const char of charsToEscape) {
+        escapedText = escapedText.replace(new RegExp('\\' + char, 'g'), '\\' + char);
+    }
+    return escapedText;
 };
 
 
