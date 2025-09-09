@@ -18,7 +18,8 @@ export type BookingFormState = {
 
 // Function to escape characters for Telegram's MarkdownV2 style
 const escapeMarkdown = (text: string) => {
-    // Escape characters: _ * [ ] ( ) ~ ` > # + - = | { } . !
+    if (!text) return '';
+    // Escape characters for Telegram's MarkdownV2: _ * [ ] ( ) ~ ` > # + - = | { } . !
     return text.replace(/([_*\[\]()~`>#+\-=|{}.!])/g, '\\$1');
 };
 
