@@ -17,7 +17,8 @@ const WhatsappIcon = () => (
   );
 
 export function WhatsappButton() {
-  const whatsappLink = "https://wa.me/447436434029?text=Hello!%20I'm%20interested%20in%20your%20spells.";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447436434029";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hello!%20I'm%20interested%20in%20your%20spells.`;
   
   return (
     <a
