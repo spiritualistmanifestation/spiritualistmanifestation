@@ -177,7 +177,7 @@ export function BookingForm() {
                     name="targetName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Target Person&apos;s First Name (Optional)</FormLabel>
+                        <FormLabel>Target Name</FormLabel>
                         <FormControl>
                           <Input placeholder="e.g., John" {...field} />
                         </FormControl>

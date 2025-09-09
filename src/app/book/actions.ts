@@ -61,7 +61,7 @@ A new spell has been booked.
 
 *Spell Details:*
 - *Spell Type:* ${spellType}
-- *Target Person:* ${targetName || 'N/A'}
+- *Target Name:* ${targetName || 'N/A'}
 
 *Client's Situation:*
 \`\`\`
