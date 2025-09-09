@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { services } from "@/lib/services";
-import { useState } from "react";
+import { useState, useTransition, useEffect } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -35,6 +35,8 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Loader2 } from "lucide-react";
+import { sendBookingNotification } from './actions';
+
 
 const bookingSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters."),
@@ -51,8 +53,10 @@ const bookingSchema = z.object({
 export function BookingForm() {
   const searchParams = useSearchParams();
   const spellFromQuery = searchParams.get('spell');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
 
   const form = useForm<z.infer<typeof bookingSchema>>({
     resolver: zodResolver(bookingSchema),
@@ -67,14 +71,24 @@ export function BookingForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof bookingSchema>) {
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
-    setIsSubmitting(false);
-    setShowSuccessDialog(true);
-    form.reset();
+  const onSubmit = (values: z.infer<typeof bookingSchema>) => {
+    setError(null);
+    const formData = new FormData();
+    Object.entries(values).forEach(([key, value]) => {
+        if(value) {
+            formData.append(key, value.toString());
+        }
+    });
+
+    startTransition(async () => {
+        const result = await sendBookingNotification({ success: false, message: '' }, formData);
+        if (result.success) {
+            setShowSuccessDialog(true);
+            form.reset();
+        } else {
+            setError(result.message);
+        }
+    });
   }
   
   return (
@@ -208,9 +222,10 @@ export function BookingForm() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                    {isSubmitting ? "Booking..." : "Book Spell"}
+                  {error && <p className="text-sm font-medium text-destructive">{error}</p>}
+                  <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+                    {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                    {isPending ? "Booking..." : "Book Spell"}
                   </Button>
                 </form>
               </Form>
